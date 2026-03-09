@@ -12,5 +12,15 @@ def find_min():
     print("najnizsie cislo: ", minimum)
 
 
+thread1 = threading.Thread(target=find_max)
+thread2 = threading.Thread(target=find_min)
 
-print(numbers)
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+# test1 = find_max()
+# test2 = find_min()
+# print(numbers)
